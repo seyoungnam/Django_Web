@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}post_archive_day.html{% endblock %}
+
+{% block content %}
+
+<h1>Post Archives for {{ day|date:"N d, Y" }}</h1>
+
+<div>
+    {% include "blog/post_archive_snippet.html" %}
+</div>
+{% endblock %}

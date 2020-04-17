@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}post_archive_year.html{% endblock %}
+
+{% block content %}
+
+<h1>Post Archives for {{ year|date:"Y" }}</h1>
+<ul>
+    {% for date in date_list %}
+    <li style="display: inline;">
+        <a href="{% url 'blog:post_month_archive' year|date:'Y' date|date:'b' %}">{{ date|date:"F" }}</a>
+    </li>
+    {% endfor %}
+</ul>
+<br>
+
+<div>
+    {% include "blog/post_archive_snippet.html" %}
+</div>
+{% endblock %}
